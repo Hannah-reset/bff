@@ -4,16 +4,22 @@ import React from "react";
 import { createAppContainer } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { Provider } from "react-redux";
-import ViewScreen from "./screens/ActivationInfoScreen";
+import ViewScreen from "./screens/ViewScreen";
+import EditScreen from "./screens/EditScreen";
 const navigator = createStackNavigator(
   {
     View: ViewScreen,
-    Edit: ViewScreen
+    Edit: {
+      screen: EditScreen,
+      navigationOptions: {
+        title: "After Merge"
+      }
+    }
   },
   {
     initialRouteName: "View",
     defaultNavigationOptions: {
-      title: "View"
+      title: "Before Merge"
     }
   }
 );

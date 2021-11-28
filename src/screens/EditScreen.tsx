@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { pageData } from "../bff/MergeData";
 import { setCompany } from "../redux/ActivationAction";
 
-const ViewScreen = ({ navigation }) => {
+const EditScreen = ({ navigation }) => {
   const data = pageData("company", 2);
   const dispatch = useDispatch();
   dispatch(setCompany("new company"));
@@ -20,7 +20,7 @@ const ViewScreen = ({ navigation }) => {
   );
 };
 
-ViewScreen.navigationOptions = ({ navigation }) => {
+EditScreen.navigationOptions = ({ navigation }) => {
   return {
     headerRight: () => (
       <TouchableOpacity
@@ -30,4 +30,4 @@ ViewScreen.navigationOptions = ({ navigation }) => {
   };
 };
 
-export default ViewScreen;
+export default EditScreen;
